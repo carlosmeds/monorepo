@@ -24,10 +24,14 @@ This Turborepo includes the following packages/apps:
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Listing dependecies
+### Listing dependencies
 
 ```sh
 pnpm list --filter './apps/**'
+```
+
+```sh
+pnpm list --filter=@repo/types
 ```
 
 ### Utilities
