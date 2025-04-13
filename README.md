@@ -1,6 +1,6 @@
-# Turborepo starter
+# Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is a monorepo sample repository using turborpo
 
 ## Using this example
 
@@ -37,7 +37,7 @@ This Turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd monorepo
 pnpm build
 ```
 
@@ -46,21 +46,19 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd monorepo
 pnpm dev
 ```
 
 ### Remote Caching
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
 
 Turborepo can use a technique known as [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
 
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
 
 ```
-cd my-turborepo
+cd monorepo
 npx turbo login
 ```
 
@@ -71,6 +69,18 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 ```
 npx turbo link
 ```
+
+## Why PNPM?
+
+This project uses PNPM because it is highly efficient for monorepos:
+
+- **Disk Space Efficiency**: Dependencies are stored globally and symlinked, avoiding duplication.
+- **Faster Installations**: Optimized for speed with content-addressable storage.
+- **Strict Dependency Isolation**: Ensures each package only accesses its declared dependencies.
+- **Native Monorepo Support**: Seamlessly links packages with `pnpm-workspace.yaml`.
+- **Perfect for Turborepo**: Complements Turborepo's caching and task orchestration for faster builds.
+
+Learn more at [PNPM Documentation](https://pnpm.io/).
 
 ## Useful Links
 
